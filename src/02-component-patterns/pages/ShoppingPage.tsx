@@ -6,23 +6,13 @@ import {
   ProductTitle,
 } from "../components";
 
+import "../styles/custom-styles.css";
+
 const product = {
   id: "1",
   title: "Coffee Mug",
   img: "./coffee-mug.png",
 };
-
-const products = [
-  {
-    id: "1",
-    title: "Coffee Mug",
-    // img: "./coffee-mug.png",
-  },
-  {
-    id: "2",
-    title: "Water Bottle",
-  },
-];
 
 export const ShoppingPage = () => {
   return (
@@ -30,15 +20,28 @@ export const ShoppingPage = () => {
       <h1>Shopping Store</h1>
       <hr />
       <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
-        <ProductCard product={product}>
-          <ProductImage />
-          <ProductTitle title="Hola mundo" />
-          <ProductButtons />
+        <ProductCard product={product} className="bg-dark text-white">
+          <ProductImage className="custom-image" />
+          <ProductTitle />
+          <ProductButtons className="custom-buttons" />
         </ProductCard>
-        <ProductCard product={product}>
-          <ProductCard.Image />
+        <ProductCard product={product} className="bg-dark text-white">
+          <ProductCard.Image className="custom-image" />
           <ProductCard.Title />
-          <ProductCard.Buttons />
+          <ProductCard.Buttons className="custom-buttons" />
+        </ProductCard>
+        <ProductCard
+          product={product}
+          style={{ backgroundColor: "rebeccapurple" }}
+        >
+          <ProductImage />
+          <ProductTitle
+            style={{
+              fontWeight: "bold",
+              color: "white",
+            }}
+          />
+          <ProductButtons />
         </ProductCard>
       </div>
     </div>
